@@ -27,7 +27,7 @@ static int prove_sizes(char *num)
 	return (1);
 }
 
-static int prove_letters(char *num)
+int prove_letters(char *num)
 {
 	size_t index;
 
@@ -43,7 +43,7 @@ static int prove_letters(char *num)
 		}
 		else
 		{
-			if (!ft_isdigit(num[index]))
+			if (!ft_isdigit(num[index]) && !ft_isspace(num[index]))
 				return (0);
 		}
 		index++;
@@ -58,9 +58,12 @@ int prove_arguments(t_list **lst_t)
 	t_list *lst;
 
 	if (!lst_t || !*lst_t)
-		return (1);
+		return (0);
 	if (!(*lst_t = prove_duplicates(*lst_t)))
-		return (1);
+	{
+		ft_lst_free_chain(*lst_t);
+		return (0);
+	}
 	lst = *lst_t;
 	index = 0;
 	temp = lst;
@@ -69,9 +72,10 @@ int prove_arguments(t_list **lst_t)
 		if (!prove_letters(lst->content) || !prove_sizes(lst->content))
 		{
 			ft_lst_free_chain(temp);
-			return (1);
+			ft_lst_free_chain(lst);
+			return (0);
 		}
 		lst = lst->next;
 	}
-	return (0);
+	return (1);
 }

@@ -4,7 +4,7 @@ FILENAMES = main.c
 FILENAMES += convert_to_stack.c proves.c
 FILENAMES += operators_p.c operators_r.c operators_rr.c
 FILENAMES += operators_s.c
-FILENAMES += issorted.c algorithm.c
+FILENAMES += issorted.c algorithm.c unfolding_arguments.c
 NAME = push_swap
 
 SRCS	=$(addprefix srcs/, $(FILENAMES))

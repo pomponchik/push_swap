@@ -5,7 +5,11 @@
 # include <stdio.h>
 
 int prove_arguments(t_list **lst);
+int prove_letters(char *num);
+int increment_numbers(t_list **arguments);
 void convert_arguments_to_stack(size_t channel, t_list *content);
+void unfolding_arguments_from_strings(t_list *old);
+t_list *unfolding_arguments_from_standart_input(size_t *error);
 
 int sa(size_t stack_1, t_list **commands);
 int sb(size_t stack_2, t_list **commands);

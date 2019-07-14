@@ -7,7 +7,6 @@ void convert_arguments_to_stack(size_t channel, t_list *content)
 	int number;
 
 	temp = content;
-	ft_lst_putstr_sep(content, ", ");
 	ft_putstr("\n");
 	ft_putstr("k1\n");
 	while (content)
