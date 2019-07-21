@@ -6,6 +6,7 @@
 
 typedef struct			s_tacks
 {
+	int print;
 	int *stack_a;
 	size_t size_a;
 	int *stack_b;
@@ -22,5 +23,10 @@ void error_input(void);
 void unfolding_arguments(t_list *lst);
 int structure_filler(t_list *arguments, t_stacks *stacks);
 void out(t_stacks *stacks);
+
+void sa(t_stacks *stacks);
+void sb(t_stacks *stacks);
+
+void print_operations(t_stacks *stacks, char *operation);
 
 #endif

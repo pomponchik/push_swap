@@ -18,6 +18,7 @@ static void		structure_nuller(t_stacks *stacks)
 	stacks->max = 0;
 	stacks->size_b = 0;
 	stacks->size_a = 0;
+	stacks->print = 0;
 	stacks->stack_a = NULL;
 	stacks->stack_b = NULL;
 }

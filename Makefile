@@ -2,7 +2,7 @@
 
 FILENAMES = main.c
 FILENAMES += proves_extra.c errors.c
-FILENAMES += structure_filler.c
+FILENAMES += structure_filler.c operators_s.c print_operations.c
 FILENAMES += unfolding_arguments.c prove_letters.c out.c
 NAME = push_swap
 
