@@ -32,10 +32,12 @@ static void	paste_arguments(t_list *lst, t_list *new)
 	if (ft_lst_chain_len(new) == 1)
 	{
 		lst->content = new->content;
+		lst->content_size = new->content_size;
 		free(new);
 		return ;
 	}
 	lst->content = new->content;
+	lst->content_size = new->content_size;
 	(ft_lst_get_end(new))->next = lst->next;
 	lst->next = new->next;
 	free(new);
