@@ -1,37 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/20 22:10:20 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/20 22:10:22 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <head.h>
 
 int main(int argc, char **argv)
 {
 	t_list *arguments;
-	size_t stack_1;
-	size_t stack_2;
+	t_stacks stacks;
 
-	ft_putstr("main 1\n");
-	arguments = ft_get_arguments_command_line(argc, argv);
-	ft_putstr("main 2\n");
-	if (increment_numbers(&arguments) && prove_arguments(&arguments))
+	if (!(arguments = ft_get_arguments_command_line(argc, argv)))
+		error_input();
+	if (!prove_letters(arguments))
+		error_lst(arguments);
+	unfolding_arguments(arguments);
+	if (!prove_arguments(&arguments) || !structure_filler(arguments, &stacks))
+		error_lst(arguments);
+	size_t r = 0;
+	while (r < stacks.size_a)
 	{
-		ft_putstr("main 3\n");
-		ft_lst_putstr_sep(arguments, ", ");
-		unfolding_arguments_from_strings(arguments);
-		ft_putstr("main 4\n");
-		stack_1 = ft_lst_stack_empty_stack_num();
-		ft_putstr("main 5\n");
-		stack_2 = stack_1 + 1;
-		ft_putstr("main 6\n");
-		convert_arguments_to_stack(stack_1, arguments);
-		ft_putstr("main 7\n");
-		/*if (!issorted_a(stack_1))
-		{*/
-			ft_putstr("main 8\n");
-			algorithm(stack_1, stack_2);
-			ft_putstr("main 9\n");
-		//}
+		ft_putnbr((stacks.stack_a)[r]);
+		ft_putstr("\n");
+		r++;
 	}
-	else
-	{
-		ft_putstr_fd("Error\n", 2);
-		exit(1);
-	}
+	//algorithm();
 	return (0);
 }

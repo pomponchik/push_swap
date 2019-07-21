@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithm.c                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/20 22:13:36 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/20 22:13:38 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/07/20 22:08:40 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/20 22:08:43 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <head.h>
 
-void algorithm(size_t stack_a, size_t stack_b)
+void error_lst(t_list *lst)
 {
-	t_list *commands;
+	ft_lst_free_chain(lst);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
 
-	commands = NULL;
-	ft_putstr("algorithm 1\n");
-	move_a(stack_a, stack_b, &commands);
-	ft_putstr("algorithm 2\n");
-	ft_lst_putstr_free_cs(commands);
-	ft_putstr("algorithm 3\n");
+void error_input(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
 }

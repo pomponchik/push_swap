@@ -1,10 +1,9 @@
 .PHONY: clean fclean re make all
 
 FILENAMES = main.c
-FILENAMES += convert_to_stack.c proves.c
-FILENAMES += operators_p.c operators_r.c operators_rr.c
-FILENAMES += operators_s.c
-FILENAMES += issorted.c algorithm.c unfolding_arguments.c
+FILENAMES += proves_extra.c errors.c
+FILENAMES += structure_filler.c
+FILENAMES += unfolding_arguments.c prove_letters.c
 NAME = push_swap
 
 SRCS	=$(addprefix srcs/, $(FILENAMES))
