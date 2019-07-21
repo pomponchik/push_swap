@@ -28,9 +28,10 @@ int main(int argc, char **argv)
 	while (r < stacks.size_a)
 	{
 		ft_putnbr((stacks.stack_a)[r]);
-		ft_putstr("\n");
+		ft_putstr(", ");
 		r++;
 	}
-	//algorithm();
+	ft_putstr("\n");
+	out(&stacks);
 	return (0);
 }

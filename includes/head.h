@@ -21,5 +21,6 @@ void error_lst(t_list *lst);
 void error_input(void);
 void unfolding_arguments(t_list *lst);
 int structure_filler(t_list *arguments, t_stacks *stacks);
+void out(t_stacks *stacks);
 
 #endif

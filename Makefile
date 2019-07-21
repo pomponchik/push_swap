@@ -3,7 +3,7 @@
 FILENAMES = main.c
 FILENAMES += proves_extra.c errors.c
 FILENAMES += structure_filler.c
-FILENAMES += unfolding_arguments.c prove_letters.c
+FILENAMES += unfolding_arguments.c prove_letters.c out.c
 NAME = push_swap
 
 SRCS	=$(addprefix srcs/, $(FILENAMES))
