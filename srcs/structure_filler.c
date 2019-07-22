@@ -74,5 +74,7 @@ int				structure_filler(t_list *arguments, t_stacks *stacks)
 		return (0);
 	}
 	stacks->size_a = size;
+	stacks->size_b = 0;
+	search_max_min(stacks);
 	return (1);
 }

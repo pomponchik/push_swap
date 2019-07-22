@@ -11,3 +11,23 @@
 /* ************************************************************************** */
 
 #include <head.h>
+
+void pa(t_stacks *stacks)
+{
+	if (!stacks->size_b)
+		return ;
+	stacks->stack_a[stacks->size_a] = stacks->stack_b[stacks->size_b - 1];
+	stacks->size_a++;
+	stacks->size_b--;
+	print_operations(stacks, "pa");
+}
+
+void pb(t_stacks *stacks)
+{
+	if (!stacks->size_a)
+		return ;
+	stacks->stack_b[stacks->size_b] = stacks->stack_a[stacks->size_a - 1];
+	stacks->size_b++;
+	stacks->size_a--;
+	print_operations(stacks, "pb");
+}

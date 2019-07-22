@@ -16,9 +16,8 @@ void sa(t_stacks *stacks)
 {
 	if (stacks->size_a || stacks->size_a == 1)
 		return ;
-	&((stacks->stack_a)[size_a - 1])
-	ft_swap_n_bytes(&((stacks->stack_a)[size_a - 1]), \
-	&((stacks->stack_a)[size_a - 2]), sizeof(int));
+	ft_swap_n_bytes(&((stacks->stack_a)[stacks->size_a - 1]), \
+	&((stacks->stack_a)[stacks->size_a - 2]), sizeof(int));
 	print_operations(stacks, "sa");
 }
 
@@ -26,9 +25,8 @@ void sb(t_stacks *stacks)
 {
 	if (stacks->size_b || stacks->size_b == 1)
 		return ;
-	&((stacks->stack_b)[size_b - 1])
-	ft_swap_n_bytes(&((stacks->stack_b)[size_b - 1]), \
-	&((stacks->stack_b)[size_b - 2]), sizeof(int));
+	ft_swap_n_bytes(&((stacks->stack_b)[stacks->size_b - 1]), \
+	&((stacks->stack_b)[stacks->size_b - 2]), sizeof(int));
 	print_operations(stacks, "sb");
 }
 
@@ -36,13 +34,11 @@ void ss(t_stacks *stacks)
 {
 	if (stacks->size_a || stacks->size_a == 1)
 		return ;
-	&((stacks->stack_a)[size_a - 1])
-	ft_swap_n_bytes(&((stacks->stack_a)[size_a - 1]), \
-	&((stacks->stack_a)[size_a - 2]), sizeof(int));
+	ft_swap_n_bytes(&((stacks->stack_a)[stacks->size_a - 1]), \
+	&((stacks->stack_a)[stacks->size_a - 2]), sizeof(int));
 	if (stacks->size_b || stacks->size_b == 1)
 		return ;
-	&((stacks->stack_b)[size_b - 1])
-	ft_swap_n_bytes(&((stacks->stack_b)[size_b - 1]), \
-	&((stacks->stack_b)[size_b - 2]), sizeof(int));
+	ft_swap_n_bytes(&((stacks->stack_b)[stacks->size_b - 1]), \
+	&((stacks->stack_b)[stacks->size_b - 2]), sizeof(int));
 	print_operations(stacks, "ss");
 }

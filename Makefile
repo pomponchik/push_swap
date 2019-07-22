@@ -4,6 +4,8 @@ FILENAMES = main.c
 FILENAMES += proves_extra.c errors.c
 FILENAMES += structure_filler.c operators_s.c print_operations.c
 FILENAMES += unfolding_arguments.c prove_letters.c out.c
+FILENAMES += operators_p.c operators_r.c operators_rr.c
+FILENAMES += sorting_three.c search_max_min.c to_b.c
 NAME = push_swap
 
 SRCS	=$(addprefix srcs/, $(FILENAMES))
