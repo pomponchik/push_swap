@@ -12,14 +12,11 @@
 
 #include <head.h>
 
-void algorithm(size_t stack_a, size_t stack_b)
+void algorithm(t_stacks *stacks)
 {
-	t_list *commands;
-
-	commands = NULL;
-	ft_putstr("algorithm 1\n");
-	move_a(stack_a, stack_b, &commands);
-	ft_putstr("algorithm 2\n");
-	ft_lst_putstr_free_cs(commands);
-	ft_putstr("algorithm 3\n");
+	if (stacks->size_a <= 3)
+	{
+		sorting_three(stacks->stack_a, stacks->size_a, stacks);
+		return ;
+	}
 }

@@ -41,6 +41,7 @@ void rrr(t_stacks *stacks);
 
 void sorting_three(int *ints, size_t size, t_stacks *stacks);
 void search_max_min(t_stacks *stacks);
+void algorithm(t_stacks *stacks);
 
 void print_operations(t_stacks *stacks, char *operation);
 

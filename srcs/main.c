@@ -32,6 +32,15 @@ int main(int argc, char **argv)
 		r++;
 	}
 	ft_putstr("\n");
+	algorithm(&stacks);
+	r = 0;
+	while (r < stacks.size_a)
+	{
+		ft_putnbr((stacks.stack_a)[r]);
+		ft_putstr(", ");
+		r++;
+	}
+	ft_putstr("\n");
 	out(&stacks);
 	return (0);
 }
