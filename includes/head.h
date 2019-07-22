@@ -42,6 +42,11 @@ void rrr(t_stacks *stacks);
 void sorting_three(int *ints, size_t size, t_stacks *stacks);
 void search_max_min(t_stacks *stacks);
 void algorithm(t_stacks *stacks);
+void to_b(t_stacks *stacks);
+int is_sorted(int *ints, size_t size);
+int is_sorted_shift(int *ints, size_t size);
+size_t is_sorted_shift_in_mind(int *ints, size_t size, int new);
+size_t get_index(int *ints, size_t size, int num);
 
 void print_operations(t_stacks *stacks, char *operation);
 

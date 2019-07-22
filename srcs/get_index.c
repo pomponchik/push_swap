@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_b.c                                             :+:      :+:    :+:   */
+/*   get_index.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/22 21:31:34 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:31:37 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/07/22 22:50:46 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/22 22:50:48 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <head.h>
 
-void to_b(t_stacks *stacks)
+size_t get_index(int *ints, size_t size, int num)
 {
-	while (stacks->size_a > 3)
+	size_t result;
+
+	result = 0;
+	while (result < size)
 	{
-		if ((stacks->stack_a)[stacks->size_a - 1] == stacks->max \
-		|| (stacks->stack_a)[stacks->size_a - 1] == stacks->min)
-			ra(stacks);
-		else
-			pb(stacks);
+		if (ints[result] == num)
+			break ;
+		result++;
 	}
-	sorting_three(stacks->stack_a, stacks->size_a, stacks);
+	return (result);
 }

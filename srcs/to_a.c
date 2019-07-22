@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_b.c                                             :+:      :+:    :+:   */
+/*   to_a.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/22 21:31:34 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:31:37 by ahalmon-         ###   ########.fr       */
+/*   Created: 2019/07/22 21:35:07 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/22 21:35:09 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <head.h>
 
-void to_b(t_stacks *stacks)
+void to_a(t_stacks *stacks)
 {
-	while (stacks->size_a > 3)
+	int fastest;
+
+	while (stacks->size_b)
 	{
-		if ((stacks->stack_a)[stacks->size_a - 1] == stacks->max \
-		|| (stacks->stack_a)[stacks->size_a - 1] == stacks->min)
-			ra(stacks);
-		else
-			pb(stacks);
+		fastest = 
 	}
-	sorting_three(stacks->stack_a, stacks->size_a, stacks);
 }

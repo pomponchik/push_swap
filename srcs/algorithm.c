@@ -14,9 +14,13 @@
 
 void algorithm(t_stacks *stacks)
 {
+	if (is_sorted(stacks->stack_a, stacks->size_a))
+		return ;
 	if (stacks->size_a <= 3)
 	{
 		sorting_three(stacks->stack_a, stacks->size_a, stacks);
 		return ;
 	}
+	to_b(stacks);
+
 }
