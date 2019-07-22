@@ -36,6 +36,11 @@ int do_up(t_stacks *stacks, size_t index)
 	return (0);
 }
 
+int do_down(t_stacks *stacks, size_t index)
+{
+
+}
+
 int fastest_cowboy(t_stacks *stacks)
 {
 	size_t temp;
