@@ -76,7 +76,6 @@ static int *resize(int *ints, size_t size, int new, size_t new_index)
 	{
 		ft_memcpy(result, ints, new_index * sizeof(int));
 		ft_memcpy(ft_jump(result, new_index * sizeof(int)), &new, sizeof(int));
-
 		ft_memcpy(ft_jump(result, (new_index + 1) * sizeof(int)), \
 		ft_jump(ints, new_index * sizeof(int)), \
 		(size - new_index) * sizeof(int));
@@ -95,7 +94,6 @@ size_t is_sorted_shift_in_mind(int *ints, size_t size, int new)
 	{
 		temp = resize(ints, size, new, index);
 		result = is_sorted_shift(temp, size + 1);
-		prints(temp, size + 1);
 		free(temp);
 		if (result)
 			return (index);

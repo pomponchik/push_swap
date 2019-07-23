@@ -12,22 +12,22 @@
 
 #include <head.h>
 
-void pa(t_stacks *stacks)
+void pa(t_stacks *stacks, t_flaggs *flags)
 {
 	if (!stacks->size_b)
 		return ;
 	stacks->stack_a[stacks->size_a] = stacks->stack_b[stacks->size_b - 1];
 	stacks->size_a++;
 	stacks->size_b--;
-	print_operations(stacks, "pa");
+	print_operations(stacks, "pa", flags);
 }
 
-void pb(t_stacks *stacks)
+void pb(t_stacks *stacks, t_flaggs *flags)
 {
 	if (!stacks->size_a)
 		return ;
 	stacks->stack_b[stacks->size_b] = stacks->stack_a[stacks->size_a - 1];
 	stacks->size_b++;
 	stacks->size_a--;
-	print_operations(stacks, "pb");
+	print_operations(stacks, "pb", flags);
 }

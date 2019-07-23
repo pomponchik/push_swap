@@ -19,7 +19,7 @@ static void search_max(t_stacks *stacks)
 
 	result = (stacks->stack_a)[0];
 	index = 1;
-	while (index < stacks->size_a - 1)
+	while (index < stacks->size_a)
 	{
 		if ((stacks->stack_a)[index] > result)
 			result = (stacks->stack_a)[index];
@@ -35,7 +35,7 @@ static void search_min(t_stacks *stacks)
 
 	result = (stacks->stack_a)[0];
 	index = 1;
-	while (index < stacks->size_a - 1)
+	while (index < stacks->size_a)
 	{
 		if ((stacks->stack_a)[index] < result)
 			result = (stacks->stack_a)[index];

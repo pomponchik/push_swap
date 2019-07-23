@@ -12,47 +12,22 @@
 
 #include <head.h>
 
-void prints(int *ints, size_t size)
-{
-	size_t r = 0;
-	ft_putstr("resize = ");
-	while (r < size)
-	{
-		ft_putnbr(ints[r]);
-		ft_putstr(", ");
-		r++;
-	}
-	ft_putstr("\n");
-}
-
-void printsa(int *ints, size_t size)
-{
-	size_t r = 0;
-	while (r < size)
-	{
-		ft_putnbr(ints[r]);
-		ft_putstr(", ");
-		r++;
-	}
-	ft_putstr("\n");
-}
-
-
 int main(int argc, char **argv)
 {
 	t_list *arguments;
 	t_stacks stacks;
+	t_flaggs flags;
 
 	if (!(arguments = ft_get_arguments_command_line(argc, argv)))
 		error_input();
+	arguments = flags_filler(arguments, &flags);
 	if (!prove_letters(arguments))
 		error_lst(arguments);
 	unfolding_arguments(arguments);
 	if (!prove_arguments(&arguments) || !structure_filler(arguments, &stacks))
 		error_lst(arguments);
-	printsa(stacks.stack_a, stacks.size_a);
-	algorithm(&stacks);
-	printsa(stacks.stack_a, stacks.size_a);
+	print_begin(&stacks, &flags);
+	algorithm(&stacks, &flags);
 	out(&stacks);
 	return (0);
 }

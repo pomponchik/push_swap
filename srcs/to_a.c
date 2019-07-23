@@ -12,50 +12,50 @@
 
 #include <head.h>
 
-static void to_depth(t_stacks *stacks, int fastest)
+static void to_depth(t_stacks *stacks, int fastest, t_flaggs *flags)
 {
 	size_t mind;
 	size_t steps;
 	int up;
 
 	mind = is_sorted_shift_in_mind(stacks->stack_a, stacks->size_a, fastest);
-	steps = how_many_steps_to_down(stacks, mind);
-	up = do_down(stacks, mind);
+	steps = how_many_steps_to_get_out(mind, stacks->size_a);
+	up = do_up(mind, stacks->size_a);
 	while (steps)
 	{
 		if (up)
-			rra(stacks);
+			rra(stacks, flags);
 		else
-			ra(stacks);
+			ra(stacks, flags);
 		steps--;
 	}
 }
 
-static void to_surface(t_stacks *stacks, int fastest)
+static void to_surface(t_stacks *stacks, int fastest, t_flaggs *flags)
 {
 	size_t index_fastest;
 	int up;
 
-	index_fastest = get_index(stacks->stack_b, stacks->size_a, fastest);
-	up = do_up(stacks, index_fastest);
-	/*while ((stacks->stack_b)[stacks->size_b - 1] != fastest)
+	index_fastest = get_index(stacks->stack_b, stacks->size_b, fastest);
+	up = do_up(index_fastest, stacks->size_b);
+	while ((stacks->stack_b)[stacks->size_b - 1] != fastest)
 	{
 		if (up)
-			rb(stacks);
+			rb(stacks, flags);
 		else
-			rrb(stacks);
-	}*/
+			rrb(stacks, flags);
+	}
 }
 
-void to_a(t_stacks *stacks)
+void to_a(t_stacks *stacks, t_flaggs *flags)
 {
 	int fastest;
 
 	while (stacks->size_b)
 	{
 		fastest = fastest_cowboy(stacks);
-		to_surface(stacks, fastest);
-		to_depth(stacks, fastest);
-		pa(stacks);
+		to_surface(stacks, fastest, flags);
+		to_depth(stacks, fastest, flags);
+		pa(stacks, flags);
 	}
 }

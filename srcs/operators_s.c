@@ -12,25 +12,25 @@
 
 #include <head.h>
 
-void sa(t_stacks *stacks)
+void sa(t_stacks *stacks, t_flaggs *flags)
 {
 	if (!stacks->size_a || stacks->size_a == 1)
 		return ;
 	ft_swap_n_bytes(&((stacks->stack_a)[stacks->size_a - 1]), \
 	&((stacks->stack_a)[stacks->size_a - 2]), sizeof(int));
-	print_operations(stacks, "sa");
+	print_operations(stacks, "sa", flags);
 }
 
-void sb(t_stacks *stacks)
+void sb(t_stacks *stacks, t_flaggs *flags)
 {
 	if (!stacks->size_b || stacks->size_b == 1)
 		return ;
 	ft_swap_n_bytes(&((stacks->stack_b)[stacks->size_b - 1]), \
 	&((stacks->stack_b)[stacks->size_b - 2]), sizeof(int));
-	print_operations(stacks, "sb");
+	print_operations(stacks, "sb", flags);
 }
 
-void ss(t_stacks *stacks)
+void ss(t_stacks *stacks, t_flaggs *flags)
 {
 	if (!stacks->size_a || stacks->size_a == 1)
 		return ;
@@ -44,5 +44,5 @@ void ss(t_stacks *stacks)
 		ft_swap_n_bytes(&((stacks->stack_b)[stacks->size_b - 1]), \
 		&((stacks->stack_b)[stacks->size_b - 2]), sizeof(int));
 	}
-	print_operations(stacks, "ss");
+	print_operations(stacks, "ss", flags);
 }

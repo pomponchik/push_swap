@@ -15,27 +15,25 @@
 int fastest_cowboy(t_stacks *stacks)
 {
 	size_t temp;
-	size_t temp_2;
-	size_t result;
+	size_t result_size;
 	size_t index;
+	size_t result_index;
 
-	result = 0;
 	index = 1;
-	temp_2 = how_many_steps_to_get_out(stacks, 0) + \
-	is_sorted_shift_in_mind(stacks->stack_b, stacks->size_b, \
-	(stacks->stack_b)[0]);
+
+	result_size = how_many_steps_to_get_out(0, stacks->size_b) + how_many_steps_to_get_out(is_sorted_shift_in_mind(stacks->stack_a, stacks->size_a, \
+	(stacks->stack_b)[0]), stacks->size_a);
+	result_index = 0;
 	while (index < stacks->size_b)
 	{
-		temp = how_many_steps_to_get_out(stacks, index);
-		temp += how_many_steps_to_down(stacks, \
-			is_sorted_shift_in_mind(stacks->stack_a, \
-				stacks->size_a, (stacks->stack_b)[index]));
-		if (temp < temp_2)
-			break ;
-		temp_2 = temp;
+		temp = how_many_steps_to_get_out(index, stacks->size_b);
+		temp += how_many_steps_to_get_out(is_sorted_shift_in_mind(stacks->stack_a, stacks->size_a, (stacks->stack_b)[index]), stacks->size_a);
+		if (temp < result_size)
+		{
+			result_size = temp;
+			result_index = index;
+		}
 		index++;
 	}
-	ft_putnbr((stacks->stack_b)[index]);
-	ft_putstr("\n");
-	return ((stacks->stack_b)[index]);
+	return ((stacks->stack_b)[result_index]);
 }

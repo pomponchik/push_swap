@@ -24,7 +24,7 @@ static void ints_shift_left(int *ints, size_t size)
 	}
 }
 
-void rra(t_stacks *stacks)
+void rra(t_stacks *stacks, t_flaggs *flags)
 {
 	int temp;
 
@@ -33,10 +33,10 @@ void rra(t_stacks *stacks)
 	temp = (stacks->stack_a)[0];
 	ints_shift_left(stacks->stack_a, stacks->size_a);
 	(stacks->stack_a)[stacks->size_a - 1] = temp;
-	print_operations(stacks, "rra");
+	print_operations(stacks, "rra", flags);
 }
 
-void rrb(t_stacks *stacks)
+void rrb(t_stacks *stacks, t_flaggs *flags)
 {
 	int temp;
 
@@ -45,10 +45,10 @@ void rrb(t_stacks *stacks)
 	temp = (stacks->stack_b)[0];
 	ints_shift_left(stacks->stack_b, stacks->size_b);
 	(stacks->stack_b)[stacks->size_b - 1] = temp;
-	print_operations(stacks, "rrb");
+	print_operations(stacks, "rrb", flags);
 }
 
-void rrr(t_stacks *stacks)
+void rrr(t_stacks *stacks, t_flaggs *flags)
 {
 	int temp;
 
@@ -64,5 +64,5 @@ void rrr(t_stacks *stacks)
 		ints_shift_left(stacks->stack_b, stacks->size_b);
 		(stacks->stack_b)[stacks->size_b - 1] = temp;
 	}
-	print_operations(stacks, "rrr");
+	print_operations(stacks, "rrr", flags);
 }

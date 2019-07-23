@@ -1,6 +1,6 @@
 #include <head.h>
 
-void final_turn(t_stacks *stacks)
+void final_turn(t_stacks *stacks, t_flaggs *flags)
 {
 	size_t index;
 
@@ -24,8 +24,8 @@ void final_turn(t_stacks *stacks)
 	while (!(is_sorted(stacks->stack_a, stacks->size_a)))
 	{
 		if (index)
-			rra(stacks);
+			ra(stacks, flags);
 		else
-			ra(stacks);
+			rra(stacks, flags);
 	}
 }

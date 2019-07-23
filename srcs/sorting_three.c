@@ -12,29 +12,29 @@
 
 #include <head.h>
 
-static void sorting_three_helper(int *ints, t_stacks *stacks)
+static void sorting_three_helper(int *ints, t_stacks *stacks, t_flaggs *flags)
 {
 	if (ints[0] < ints[1] && ints[1] < ints[2])
 		return ;
 	else if (ints[0] < ints[1] && ints[2] < ints[0])
-		ra(stacks);
+		ra(stacks, flags);
 	else if (ints[0] > ints[2] && ints[1] < ints[2])
-		rra(stacks);
+		rra(stacks, flags);
 	else if (ints[0] < ints[2] && ints[2] < ints[1])
-		sa(stacks);
+		sa(stacks, flags);
 	else if (ints[0] > ints[1] && ints[2] > ints[0])
 	{
-		rra(stacks);
-		sa(stacks);
+		rra(stacks, flags);
+		sa(stacks, flags);
 	}
 	else
 	{
-		sa(stacks);
-		rra(stacks);
+		sa(stacks, flags);
+		rra(stacks, flags);
 	}
 }
 
-void sorting_three(int *ints, size_t size, t_stacks *stacks)
+void sorting_three(int *ints, size_t size, t_stacks *stacks, t_flaggs *flags)
 {
 	if (size <= 1)
 		return ;
@@ -42,9 +42,9 @@ void sorting_three(int *ints, size_t size, t_stacks *stacks)
 	{
 		if (ints[0] > ints[1])
 		{
-			sa(stacks);
+			sa(stacks, flags);
 			return ;
 		}
 	}
-	sorting_three_helper(ints, stacks);
+	sorting_three_helper(ints, stacks, flags);
 }

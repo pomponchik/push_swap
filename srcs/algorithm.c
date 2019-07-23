@@ -12,16 +12,16 @@
 
 #include <head.h>
 
-void algorithm(t_stacks *stacks)
+void algorithm(t_stacks *stacks, t_flaggs *flags)
 {
 	if (is_sorted(stacks->stack_a, stacks->size_a))
 		return ;
 	if (stacks->size_a <= 3)
 	{
-		sorting_three(stacks->stack_a, stacks->size_a, stacks);
+		sorting_three(stacks->stack_a, stacks->size_a, stacks, flags);
 		return ;
 	}
-	to_b(stacks);
-	to_a(stacks);
-	//final_turn(stacks);
+	to_b(stacks, flags);
+	to_a(stacks, flags);
+	final_turn(stacks, flags);
 }

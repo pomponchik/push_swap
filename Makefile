@@ -7,7 +7,7 @@ FILENAMES += unfolding_arguments.c prove_letters.c out.c
 FILENAMES += operators_p.c operators_r.c operators_rr.c
 FILENAMES += sorting_three.c search_max_min.c to_b.c is_sorted.c
 FILENAMES += algorithm.c get_index.c final_turn.c fastest_cowboy.c
-FILENAMES += how_many_steps.c to_a.c
+FILENAMES += how_many_steps.c to_a.c flags_filler.c
 NAME = push_swap
 
 SRCS	=$(addprefix srcs/, $(FILENAMES))
