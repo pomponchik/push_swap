@@ -50,5 +50,12 @@ int do_up(t_stacks *stacks, size_t index)
 
 int do_down(t_stacks *stacks, size_t index)
 {
+	size_t up;
+	size_t down;
 
+	up = (stacks->size_a - 1) - index;
+	down = index + 1;
+	if (up < down)
+		return (1);
+	return (0);
 }

@@ -12,8 +12,6 @@
 
 #include <head.h>
 
-
-
 int fastest_cowboy(t_stacks *stacks)
 {
 	size_t temp;
@@ -25,16 +23,19 @@ int fastest_cowboy(t_stacks *stacks)
 	index = 1;
 	temp_2 = how_many_steps_to_get_out(stacks, 0) + \
 	is_sorted_shift_in_mind(stacks->stack_b, stacks->size_b, \
-	(stacks->stack_a)[0]);
-	while (index < size_a)
+	(stacks->stack_b)[0]);
+	while (index < stacks->size_b)
 	{
 		temp = how_many_steps_to_get_out(stacks, index);
-		temp += is_sorted_shift_in_mind(stacks->stack_b, stacks->size_b, \
-			(stacks->stack_a)[index]);
+		temp += how_many_steps_to_down(stacks, \
+			is_sorted_shift_in_mind(stacks->stack_a, \
+				stacks->size_a, (stacks->stack_b)[index]));
 		if (temp < temp_2)
 			break ;
 		temp_2 = temp;
 		index++;
 	}
-	return ((stacks->stack_a)[index])
+	ft_putnbr((stacks->stack_b)[index]);
+	ft_putstr("\n");
+	return ((stacks->stack_b)[index]);
 }

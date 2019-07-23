@@ -93,8 +93,9 @@ size_t is_sorted_shift_in_mind(int *ints, size_t size, int new)
 	index = 0;
 	while (index <= size)
 	{
-		temp = resize(ints, size, new, size_t index);
+		temp = resize(ints, size, new, index);
 		result = is_sorted_shift(temp, size + 1);
+		prints(temp, size + 1);
 		free(temp);
 		if (result)
 			return (index);

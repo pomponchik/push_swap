@@ -22,5 +22,6 @@ void algorithm(t_stacks *stacks)
 		return ;
 	}
 	to_b(stacks);
-
+	to_a(stacks);
+	//final_turn(stacks);
 }

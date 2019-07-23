@@ -12,6 +12,32 @@
 
 #include <head.h>
 
+void prints(int *ints, size_t size)
+{
+	size_t r = 0;
+	ft_putstr("resize = ");
+	while (r < size)
+	{
+		ft_putnbr(ints[r]);
+		ft_putstr(", ");
+		r++;
+	}
+	ft_putstr("\n");
+}
+
+void printsa(int *ints, size_t size)
+{
+	size_t r = 0;
+	while (r < size)
+	{
+		ft_putnbr(ints[r]);
+		ft_putstr(", ");
+		r++;
+	}
+	ft_putstr("\n");
+}
+
+
 int main(int argc, char **argv)
 {
 	t_list *arguments;
@@ -24,23 +50,9 @@ int main(int argc, char **argv)
 	unfolding_arguments(arguments);
 	if (!prove_arguments(&arguments) || !structure_filler(arguments, &stacks))
 		error_lst(arguments);
-	size_t r = 0;
-	while (r < stacks.size_a)
-	{
-		ft_putnbr((stacks.stack_a)[r]);
-		ft_putstr(", ");
-		r++;
-	}
-	ft_putstr("\n");
+	printsa(stacks.stack_a, stacks.size_a);
 	algorithm(&stacks);
-	r = 0;
-	while (r < stacks.size_a)
-	{
-		ft_putnbr((stacks.stack_a)[r]);
-		ft_putstr(", ");
-		r++;
-	}
-	ft_putstr("\n");
+	printsa(stacks.stack_a, stacks.size_a);
 	out(&stacks);
 	return (0);
 }
