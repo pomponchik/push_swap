@@ -12,37 +12,40 @@
 
 #include "../shared_s/push_swap.h"
 
-static void print_stack(int *ints, size_t size)
+static void put_to_list(t_stacks *stacks, char *str)
+{
+	ft_lstadd(&(stacks->commands), ft_lstnew_no_copy(str, ft_strlen(str)));
+}
+
+static void print_stack(t_stacks *stacks, int *ints, size_t size)
 {
 	size_t index;
 
 	index = 0;
 	while (index < size)
 	{
-		ft_putnbr(ints[index]);
-		ft_putstr(" ");
+		put_to_list(stacks, ft_itoa(ints[index]));
+		put_to_list(stacks, ft_strdup(" "));
 		index++;
 	}
-	ft_putstr("\n");
+	put_to_list(stacks, ft_strdup("\n"));
 }
 
 void print_operations(t_stacks *stacks, char *operation, t_flaggs *flags)
 {
 	if (!flags->print)
 	{
-		ft_putstr(operation);
-		ft_putchar('\n');
+		put_to_list(stacks, ft_strdup(operation));
+		put_to_list(stacks, ft_strdup("\n"));
 	}
 	else
 	{
-		ft_putstr(operation);
-		ft_putchar(':');
-		ft_putchar('\n');
-		ft_putstr("Stack A: ");
-		print_stack(stacks->stack_a, stacks->size_a);
-		ft_putstr("Stack B: ");
-		print_stack(stacks->stack_b, stacks->size_b);
-		ft_putstr("______________________\n");
+		put_to_list(stacks, ft_strdup(operation));
+		put_to_list(stacks, ft_strdup(":\nStack A: "));
+		print_stack(stacks, stacks->stack_a, stacks->size_a);
+		put_to_list(stacks, ft_strdup("Stack B: "));
+		print_stack(stacks, stacks->stack_b, stacks->size_b);
+		put_to_list(stacks, ft_strdup("______________________\n"));
 	}
 }
 
@@ -50,15 +53,18 @@ void print_begin(t_stacks *stacks, t_flaggs *flags)
 {
 	if (flags->print)
 	{
-		ft_putstr("______________________\n");
-		ft_putstr("Begin! ");
-		ft_putnbr((int)stacks->size_a);
-		ft_putstr(" elements.\n");
-		ft_putchar('\n');
-		ft_putstr("Stack A: ");
-		print_stack(stacks->stack_a, stacks->size_a);
-		ft_putstr("Stack B: ");
-		print_stack(stacks->stack_b, stacks->size_b);
-		ft_putstr("______________________\n");
+		put_to_list(stacks, ft_strdup("______________________\n"));
+		put_to_list(stacks, ft_strdup("Begin! "));
+		put_to_list(stacks, ft_itoa((int)stacks->size_a));
+		put_to_list(stacks, ft_strdup(" elements.\n\nStack A: "));
+		print_stack(stacks, stacks->stack_a, stacks->size_a);
+		put_to_list(stacks, ft_strdup("Stack B: "));
+		print_stack(stacks, stacks->stack_b, stacks->size_b);
+		put_to_list(stacks, ft_strdup("______________________\n"));
 	}
+}
+
+void print_final(t_stacks *stacks)
+{
+	ft_lst_putstr_free(ft_lst_turn(stacks->commands));
 }

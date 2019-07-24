@@ -20,6 +20,7 @@ static void		structure_nuller_ps(t_stacks *stacks)
 	stacks->size_a = 0;
 	stacks->stack_a = NULL;
 	stacks->stack_b = NULL;
+	stacks->commands = NULL;
 }
 
 static int		*convert_to_array_ps(t_list *lst, size_t *size)

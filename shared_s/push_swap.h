@@ -12,7 +12,7 @@ typedef struct			s_tacks
 	size_t size_b;
 	int max;
 	int min;
-
+	t_list *commands;
 }						t_stacks;
 
 typedef struct			s_flaggs
@@ -54,6 +54,7 @@ int fastest_cowboy(t_stacks *stacks);
 size_t how_many_steps_to_get_out(size_t index, size_t size);
 void print_operations(t_stacks *stacks, char *operation, t_flaggs *flags);
 void print_begin(t_stacks *stacks, t_flaggs *flags);
+void print_final(t_stacks *stacks);
 
 int prove_operators(t_list *operators);
 void error_lst(t_list *lst);

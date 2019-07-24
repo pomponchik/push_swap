@@ -47,7 +47,5 @@ t_list *get_operators(void)
 	file = reading(&size);
 	end = '\0';
 	file = ft_memjoin_free_1(file, size, &end, 1);
-	ft_putstr((char *)file);
-	ft_putstr("\n");
 	return (to_lst(file));
 }

@@ -24,4 +24,5 @@ void algorithm_ps(t_stacks *stacks, t_flaggs *flags)
 	to_b(stacks, flags);
 	to_a(stacks, flags);
 	final_turn(stacks, flags);
+	print_final(stacks);
 }
