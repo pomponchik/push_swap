@@ -2,13 +2,12 @@
 
 FILENAMES = main.c
 FILENAMES += proves_extra.c errors.c
-FILENAMES += structure_filler.c operators_s.c print_operations.c
+FILENAMES += structure_filler.c operators_s.c
 FILENAMES += unfolding_arguments.c prove_letters.c out.c
 FILENAMES += operators_p.c operators_r.c operators_rr.c
-FILENAMES += sorting_three.c search_max_min.c to_b.c is_sorted.c
-FILENAMES += algorithm.c get_index.c final_turn.c fastest_cowboy.c
-FILENAMES += how_many_steps.c to_a.c flags_filler.c
-NAME = push_swap
+FILENAMES += is_sorted.c get_operators.c prove_operators.c
+FILENAMES += algorithm.c
+NAME = checker
 
 SRCS	=$(addprefix srcs/, $(FILENAMES))
 OBJS	=$(addprefix build/, $(FILENAMES:.c=.o))
