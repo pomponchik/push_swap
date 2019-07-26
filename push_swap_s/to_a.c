@@ -37,7 +37,7 @@ static void to_surface(t_stacks *stacks, int fastest, t_flaggs *flags)
 	int up;
 
 	index_fastest = get_index(stacks->stack_b, stacks->size_b, fastest);
-	up = do_up(index_fastest, stacks->size_b);
+	up = do_up_b(index_fastest, stacks->size_b);
 	while ((stacks->stack_b)[stacks->size_b - 1] != fastest)
 	{
 		if (up)
@@ -53,7 +53,9 @@ void to_a(t_stacks *stacks, t_flaggs *flags)
 
 	while (stacks->size_b)
 	{
+
 		fastest = fastest_cowboy(stacks);
+		//ft_putnbr(fastest);
 		to_surface(stacks, fastest, flags);
 		to_depth(stacks, fastest, flags);
 		pa_ps(stacks, flags);

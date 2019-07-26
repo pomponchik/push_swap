@@ -3,3 +3,4 @@ checker
 *.o
 .DS_Store
 libft.a
+test.sh

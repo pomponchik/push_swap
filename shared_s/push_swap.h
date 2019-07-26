@@ -77,4 +77,6 @@ void algorithm(t_stacks *stacks, t_list *operators);
 int is_sorted(int *ints, size_t size);
 t_list *get_operators(void);
 
+int do_up_b(size_t index, size_t size);
+
 #endif

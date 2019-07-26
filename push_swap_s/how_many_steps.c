@@ -24,12 +24,37 @@ size_t how_many_steps_to_get_out(size_t index, size_t size)
 	return (down);
 }
 
+/*static size_t how_many_steps_to_get_out_b(size_t index, size_t size)
+{
+	size_t up;
+	size_t down;
+
+	up = index + 1;
+	down = size - index;
+	if (up < down)
+		return (up);
+	return (down);
+}
+*/
+
 int do_up(size_t index, size_t size)
 {
 	size_t up;
 	size_t down;
 
 	up = index;
+	down = size - index;
+	if (up < down)
+		return (1);
+	return (0);
+}
+
+int do_up_b(size_t index, size_t size)
+{
+	size_t up;
+	size_t down;
+
+	up = index + 1;
 	down = size - index;
 	if (up < down)
 		return (1);
