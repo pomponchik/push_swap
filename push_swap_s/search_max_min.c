@@ -6,16 +6,16 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 21:32:18 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:32:20 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:47:46 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-static void search_max(t_stacks *stacks)
+static void	search_max(t_stacks *stacks)
 {
-	int result;
-	size_t index;
+	int		result;
+	size_t	index;
 
 	result = (stacks->stack_a)[0];
 	index = 1;
@@ -28,10 +28,10 @@ static void search_max(t_stacks *stacks)
 	stacks->max = result;
 }
 
-static void search_min(t_stacks *stacks)
+static void	search_min(t_stacks *stacks)
 {
-	int result;
-	size_t index;
+	int		result;
+	size_t	index;
 
 	result = (stacks->stack_a)[0];
 	index = 1;
@@ -44,7 +44,7 @@ static void search_min(t_stacks *stacks)
 	stacks->min = result;
 }
 
-void search_max_min(t_stacks *stacks)
+void		search_max_min(t_stacks *stacks)
 {
 	search_max(stacks);
 	search_min(stacks);

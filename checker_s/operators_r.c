@@ -6,15 +6,15 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 21:32:56 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:32:58 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:29:19 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-static void ints_shift_right(int *ints, size_t size)
+static void	ints_shift_right(int *ints, size_t size)
 {
-	size_t index;
+	size_t	index;
 
 	index = size - 1;
 	while (index)
@@ -24,7 +24,7 @@ static void ints_shift_right(int *ints, size_t size)
 	}
 }
 
-void ra(t_stacks *stacks)
+void		ra(t_stacks *stacks)
 {
 	int temp;
 
@@ -35,7 +35,7 @@ void ra(t_stacks *stacks)
 	(stacks->stack_a)[0] = temp;
 }
 
-void rb(t_stacks *stacks)
+void		rb(t_stacks *stacks)
 {
 	int temp;
 
@@ -46,7 +46,7 @@ void rb(t_stacks *stacks)
 	(stacks->stack_b)[0] = temp;
 }
 
-void rr(t_stacks *stacks)
+void		rr(t_stacks *stacks)
 {
 	int temp;
 

@@ -6,13 +6,13 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 22:13:36 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/20 22:13:38 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 18:12:51 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-void algorithm_ps(t_stacks *stacks, t_flaggs *flags)
+void	algorithm_ps(t_stacks *stacks, t_flaggs *flags)
 {
 	if (is_sorted_ps(stacks->stack_a, stacks->size_a))
 		return ;

@@ -6,13 +6,13 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 21:32:00 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:32:02 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:45:04 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-static void sorting_three_helper(int *ints, t_stacks *stacks, t_flaggs *flags)
+static void	sorting_three_helper(int *ints, t_stacks *stacks, t_flaggs *flags)
 {
 	if (ints[0] < ints[1] && ints[1] < ints[2])
 		return ;
@@ -34,7 +34,8 @@ static void sorting_three_helper(int *ints, t_stacks *stacks, t_flaggs *flags)
 	}
 }
 
-void sorting_three(int *ints, size_t size, t_stacks *stacks, t_flaggs *flags)
+void		sorting_three(int *ints, size_t size, \
+	t_stacks *stacks, t_flaggs *flags)
 {
 	if (size <= 1)
 		return ;

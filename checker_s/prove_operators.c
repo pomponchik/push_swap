@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   prove_operators.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/26 17:22:54 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/26 17:25:49 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../shared_s/push_swap.h"
 
-static int check_operator(char *oper)
+static int	check_operator(char *oper)
 {
 	if (!oper)
 		return (0);
@@ -18,7 +30,7 @@ static int check_operator(char *oper)
 	return (0);
 }
 
-int prove_operators(t_list *operators)
+int			prove_operators(t_list *operators)
 {
 	if (!operators)
 		return (1);

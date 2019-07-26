@@ -6,13 +6,13 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 20:57:53 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/21 20:57:55 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:28:12 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-void pa(t_stacks *stacks)
+void	pa(t_stacks *stacks)
 {
 	if (!stacks->size_b)
 		return ;
@@ -21,7 +21,7 @@ void pa(t_stacks *stacks)
 	stacks->size_b--;
 }
 
-void pb(t_stacks *stacks)
+void	pb(t_stacks *stacks)
 {
 	if (!stacks->size_a)
 		return ;

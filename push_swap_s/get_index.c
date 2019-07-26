@@ -6,15 +6,15 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 22:50:46 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 22:50:48 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:52:25 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-size_t get_index(int *ints, size_t size, int num)
+size_t		get_index(int *ints, size_t size, int num)
 {
-	size_t result;
+	size_t	result;
 
 	result = 0;
 	while (result < size)

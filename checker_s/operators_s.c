@@ -6,13 +6,13 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 20:42:20 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/21 20:42:22 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:26:33 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-void sa(t_stacks *stacks)
+void	sa(t_stacks *stacks)
 {
 	if (!stacks->size_a || stacks->size_a == 1)
 		return ;
@@ -20,7 +20,7 @@ void sa(t_stacks *stacks)
 	&((stacks->stack_a)[stacks->size_a - 2]), sizeof(int));
 }
 
-void sb(t_stacks *stacks)
+void	sb(t_stacks *stacks)
 {
 	if (!stacks->size_b || stacks->size_b == 1)
 		return ;
@@ -28,7 +28,7 @@ void sb(t_stacks *stacks)
 	&((stacks->stack_b)[stacks->size_b - 2]), sizeof(int));
 }
 
-void ss(t_stacks *stacks)
+void	ss(t_stacks *stacks)
 {
 	if (!stacks->size_a || stacks->size_a == 1)
 		return ;

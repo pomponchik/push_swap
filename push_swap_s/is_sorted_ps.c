@@ -6,15 +6,15 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 21:54:31 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:54:34 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 18:01:56 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-int is_sorted_ps(int *ints, size_t size)
+int			is_sorted_ps(int *ints, size_t size)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while (index < size)
@@ -29,10 +29,10 @@ int is_sorted_ps(int *ints, size_t size)
 	return (1);
 }
 
-int is_sorted_shift_ps(int *ints, size_t size)
+int			is_sorted_shift_ps(int *ints, size_t size)
 {
-	size_t index;
-	size_t flag;
+	size_t	index;
+	size_t	flag;
 
 	index = 0;
 	flag = 0;
@@ -56,9 +56,9 @@ int is_sorted_shift_ps(int *ints, size_t size)
 	return (1);
 }
 
-static int *resize_ps(int *ints, size_t size, int new, size_t new_index)
+static int	*resize_ps(int *ints, size_t size, int new, size_t new_index)
 {
-	int *result;
+	int		*result;
 
 	if (!(result = (int *)malloc(sizeof(int) * (size + 1))))
 		return (NULL);
@@ -83,11 +83,11 @@ static int *resize_ps(int *ints, size_t size, int new, size_t new_index)
 	return (result);
 }
 
-size_t is_sorted_shift_in_mind_ps(int *ints, size_t size, int new)
+size_t		is_sorted_shift_in_mind_ps(int *ints, size_t size, int new)
 {
-	size_t index;
-	int *temp;
-	int result;
+	size_t	index;
+	int		*temp;
+	int		result;
 
 	index = 0;
 	while (index <= size)

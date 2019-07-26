@@ -6,20 +6,20 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 20:44:54 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/21 20:44:56 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:49:15 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-static void put_to_list(t_stacks *stacks, char *str)
+static void	put_to_list(t_stacks *stacks, char *str)
 {
 	ft_lstadd(&(stacks->commands), ft_lstnew_no_copy(str, ft_strlen(str)));
 }
 
-static void print_stack(t_stacks *stacks, int *ints, size_t size)
+static void	print_stack(t_stacks *stacks, int *ints, size_t size)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while (index < size)
@@ -31,7 +31,7 @@ static void print_stack(t_stacks *stacks, int *ints, size_t size)
 	put_to_list(stacks, ft_strdup("\n"));
 }
 
-void print_operations(t_stacks *stacks, char *operation, t_flaggs *flags)
+void		print_operations(t_stacks *stacks, char *operation, t_flaggs *flags)
 {
 	if (!flags->print)
 	{
@@ -49,7 +49,7 @@ void print_operations(t_stacks *stacks, char *operation, t_flaggs *flags)
 	}
 }
 
-void print_begin(t_stacks *stacks, t_flaggs *flags)
+void		print_begin(t_stacks *stacks, t_flaggs *flags)
 {
 	if (flags->print)
 	{
@@ -64,7 +64,7 @@ void print_begin(t_stacks *stacks, t_flaggs *flags)
 	}
 }
 
-void print_final(t_stacks *stacks)
+void		print_final(t_stacks *stacks)
 {
 	ft_lst_putstr_free(ft_lst_turn(stacks->commands));
 }

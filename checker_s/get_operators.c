@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_operators.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/26 17:22:07 by ahalmon-          #+#    #+#             */
+/*   Updated: 2019/07/26 17:33:52 by ahalmon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../shared_s/push_swap.h"
 
-static void *reading(size_t *size)
+static void		*reading(size_t *size)
 {
-	int		re;
-	char	buf[BUFF_SIZE];
-	t_list	*lst;
+	int			re;
+	char		buf[BUFF_SIZE];
+	t_list		*lst;
 
 	*size = 0;
 	if (BUFF_SIZE < 1 || read(0, buf, 0) < 0)
@@ -18,11 +30,11 @@ static void *reading(size_t *size)
 	return (ft_lst_to_array_free(ft_lst_turn(lst)));
 }
 
-static t_list *to_lst(void *file)
+static t_list	*to_lst(void *file)
 {
-	char **temp;
-	size_t index;
-	t_list *lst;
+	char		**temp;
+	size_t		index;
+	t_list		*lst;
 
 	if (!(temp = ft_strsplit((char *)file, '\n')))
 		return (NULL);
@@ -30,7 +42,8 @@ static t_list *to_lst(void *file)
 	lst = NULL;
 	while (temp[index])
 	{
-		ft_lstadd_to_end(&lst, ft_lstnew(temp[index], ft_strlen(temp[index]) + 1));
+		ft_lstadd_to_end(&lst, ft_lstnew(temp[index], \
+			ft_strlen(temp[index]) + 1));
 		index++;
 	}
 	ft_free_two_dimensional_array((void **)temp);
@@ -38,11 +51,11 @@ static t_list *to_lst(void *file)
 	return (lst);
 }
 
-t_list *get_operators(void)
+t_list			*get_operators(void)
 {
-	void *file;
-	size_t size;
-	char end;
+	void		*file;
+	size_t		size;
+	char		end;
 
 	file = reading(&size);
 	end = '\0';

@@ -6,13 +6,13 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 20:10:44 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/21 20:10:46 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 18:23:01 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-void out(t_stacks *stacks)
+void	out(t_stacks *stacks)
 {
 	ft_free_both(stacks->stack_a, stacks->stack_b);
 }

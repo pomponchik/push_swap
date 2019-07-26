@@ -6,17 +6,17 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 22:10:20 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/20 22:10:22 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:30:02 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-int main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
-	t_list *arguments;
-	t_stacks stacks;
-	t_list *operators;
+	t_list		*arguments;
+	t_stacks	stacks;
+	t_list		*operators;
 
 	if (!(arguments = ft_get_arguments_command_line(argc, argv)))
 		error_input();

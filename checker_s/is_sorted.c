@@ -6,15 +6,15 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 21:54:31 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/22 21:54:34 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:30:29 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-int is_sorted(int *ints, size_t size)
+int			is_sorted(int *ints, size_t size)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while (index < size)

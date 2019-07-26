@@ -6,16 +6,16 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 19:21:12 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/21 19:21:15 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 18:26:50 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-static int prove_string(char *str)
+static int	prove_string(char *str)
 {
-	size_t index;
-	char prev;
+	size_t	index;
+	char	prev;
 
 	index = 0;
 	prev = '\0';
@@ -36,9 +36,9 @@ static int prove_string(char *str)
 	return (1);
 }
 
-int prove_letters(t_list *lst)
+int			prove_letters(t_list *lst)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while (lst)

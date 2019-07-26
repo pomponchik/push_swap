@@ -6,17 +6,17 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/20 22:10:20 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/20 22:10:22 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 17:51:23 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../shared_s/push_swap.h"
 
-int main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
-	t_list *arguments;
-	t_stacks stacks;
-	t_flaggs flags;
+	t_list		*arguments;
+	t_stacks	stacks;
+	t_flaggs	flags;
 
 	if (!(arguments = ft_get_arguments_command_line(argc, argv)))
 		error_input_ps();
@@ -24,7 +24,8 @@ int main(int argc, char **argv)
 	if (!prove_letters(arguments))
 		error_lst_ps(arguments);
 	unfolding_arguments(arguments);
-	if (!prove_arguments(&arguments) || !structure_filler_ps(arguments, &stacks))
+	if (!prove_arguments(&arguments) || !structure_filler_ps(arguments, \
+		&stacks))
 		error_lst_ps(arguments);
 	print_begin(&stacks, &flags);
 	algorithm_ps(&stacks, &flags);
