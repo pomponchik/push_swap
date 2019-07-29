@@ -19,10 +19,11 @@ void	algorithm_ps(t_stacks *stacks, t_flaggs *flags)
 	if (stacks->size_a <= 3)
 	{
 		sorting_three(stacks->stack_a, stacks->size_a, stacks, flags);
+		print_final(stacks, flags);
 		return ;
 	}
 	to_b(stacks, flags);
 	to_a(stacks, flags);
 	final_turn(stacks, flags);
-	print_final(stacks);
+	print_final(stacks, flags);
 }

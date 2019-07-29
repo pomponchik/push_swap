@@ -21,6 +21,5 @@ void	error_lst_ps(t_list *lst)
 
 void	error_input_ps(void)
 {
-	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

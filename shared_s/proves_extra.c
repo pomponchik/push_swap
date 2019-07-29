@@ -6,7 +6,7 @@
 /*   By: ahalmon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/21 19:39:51 by ahalmon-          #+#    #+#             */
-/*   Updated: 2019/07/21 19:48:19 by ahalmon-         ###   ########.fr       */
+/*   Updated: 2019/07/26 22:11:34 by ahalmon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,41 @@ static int		prove_sizes(char *num)
 	return (1);
 }
 
+void			error_lst_still(t_list *lst)
+{
+	ft_lst_free_chain(lst);
+	exit(1);
+}
+
+static void		prove_spaces(t_list *lst)
+{
+	t_list		*temp;
+	size_t		index;
+	int			indicate;
+
+	temp = lst;
+	indicate = 0;
+	while (lst && !indicate)
+	{
+		index = 0;
+		if (lst->content)
+		{
+			while (((char *)lst->content)[index])
+			{
+				if (!ft_isspace(((char *)lst->content)[index]))
+				{
+					indicate++;
+					break ;
+				}
+				index++;
+			}
+		}
+		lst = lst->next;
+	}
+	if (!indicate)
+		error_lst_still(temp);
+}
+
 int				prove_arguments(t_list **lst_t)
 {
 	size_t		index;
@@ -46,13 +81,14 @@ int				prove_arguments(t_list **lst_t)
 	t_list		*lst;
 
 	if (!lst_t || !*lst_t)
-		return (0);
+		exit(0);
 	if (!(*lst_t = prove_duplicates(*lst_t)))
 	{
 		ft_lst_free_chain(*lst_t);
 		return (0);
 	}
 	lst = *lst_t;
+	prove_spaces(lst);
 	index = 0;
 	temp = lst;
 	while (lst)

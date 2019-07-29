@@ -33,6 +33,7 @@ static void	print_stack(t_stacks *stacks, int *ints, size_t size)
 
 void		print_operations(t_stacks *stacks, char *operation, t_flaggs *flags)
 {
+	stacks->counter++;
 	if (!flags->print)
 	{
 		put_to_list(stacks, ft_strdup(operation));
@@ -61,10 +62,22 @@ void		print_begin(t_stacks *stacks, t_flaggs *flags)
 		put_to_list(stacks, ft_strdup("Stack B: "));
 		print_stack(stacks, stacks->stack_b, stacks->size_b);
 		put_to_list(stacks, ft_strdup("______________________\n"));
+		put_to_list(stacks, ft_strdup("______________________\n"));
 	}
 }
 
-void		print_final(t_stacks *stacks)
+void		print_final(t_stacks *stacks, t_flaggs *flags)
 {
+	if (flags->print)
+	{
+		put_to_list(stacks, ft_strdup("______________________\n"));
+		put_to_list(stacks, ft_strdup("Final! "));
+		put_to_list(stacks, ft_itoa((int)stacks->counter));
+		if (stacks->counter == 1)
+			put_to_list(stacks, ft_strdup(" operation.\n"));
+		else
+			put_to_list(stacks, ft_strdup(" operations.\n"));
+		put_to_list(stacks, ft_strdup("______________________\n"));
+	}
 	ft_lst_putstr_free(ft_lst_turn(stacks->commands));
 }

@@ -24,6 +24,7 @@ typedef struct			s_tacks
 	int					max;
 	int					min;
 	t_list				*commands;
+	size_t				counter;
 }						t_stacks;
 
 typedef struct			s_flaggs
@@ -71,9 +72,10 @@ size_t					how_many_steps_to_get_out_b(size_t index, size_t size);
 void					print_operations(t_stacks *stacks, \
 	char *operation, t_flaggs *flags);
 void					print_begin(t_stacks *stacks, t_flaggs *flags);
-void					print_final(t_stacks *stacks);
+void					print_final(t_stacks *stacks, t_flaggs *flags);
 int						prove_operators(t_list *operators);
 void					error_lst(t_list *lst);
+void					error_lst_still(t_list *lst);
 void					error_input(void);
 void					error_operators(t_list *lst, t_stacks *stacks);
 void					unfolding_arguments(t_list *lst);
